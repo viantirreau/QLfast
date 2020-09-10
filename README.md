@@ -9,6 +9,9 @@ Forked from the great Koa generator,
 [oahu](https://github.com/daleal/oahu) from
 [@daleal](https://github.com/daleal/).
 
+Inspired from the awesome [Full Stack React GraphQL TypeScript Tutorial](https://www.youtube.com/watch?v=I6ypD7qv3Z8) 
+from [@benawad](https://github.com/benawad), which is published at [GitHub](https://github.com/benawad/lireddit/).
+
 ## Running Locally
 
 ### Requirements
