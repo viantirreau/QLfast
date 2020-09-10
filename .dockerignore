@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Include application files
+!src
+!tsconfig.json
+!ormconfig.json
+
+# Include build files
+!entrypoint.sh
+!package.json
+!yarn.lock

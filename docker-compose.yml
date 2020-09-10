@@ -1,0 +1,47 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:12.2
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust # Insecure connection, only for local
+    networks:
+      - backend
+  web:
+    build: .
+    init: true
+    command: yarn dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+    ports:
+      - "3000:3000"
+    env_file: .env
+    depends_on:
+      - db
+      - redis
+    networks:
+      - backend
+      - redis-net
+  redis:
+    image: redis:6.0.6-alpine
+    command: ["redis-server"] # , "--appendonly", "yes"  See https://redis.io/topics/persistence
+    hostname: redis
+    networks:
+      - redis-net
+    volumes:
+      - redis-data:/data
+
+volumes:
+  data:
+    driver: local
+  redis-data:
+    driver: local
+
+# Networks for container communication
+networks:
+  backend:
+  redis-net:
