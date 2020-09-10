@@ -1,4 +1,4 @@
-# Brain
+# QLfast
 
 Fastify template built with `Docker` and `docker-compose` to **_plug and play_**. API-centric, includes a GraphQL server, a Redis instance and configures 
 the project with TypeScript.
